@@ -1,0 +1,201 @@
+# Set wallpaper
+exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.jpg
+
+# Auto lock
+exec --no-startup-id xautolock -time 15 -locker "dm-tool lock" &
+
+# Auto detect screens and change configuration 
+exec autorandr --load $(autorandr --detect)
+
+# Shortcuts
+bindsym $mod+F1 exec firefox
+bindsym $mod+F2 exec telegram-desktop
+
+# Autostart applications
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# Modifier key
+set $mod Mod4
+
+# Global font
+font pango:Fira Code Retina Nerd Font Complete Windows Compatible 9
+
+# Use $mod+Mouse to drag floating windows
+floating_modifier $mod
+
+#Change borders
+bindsym $mod+u border none
+bindsym $mod+y border pixel 2
+bindsym $mod+n border normal
+# Default = none
+for_window [class="^.*"] border pixel 2
+
+# Start a terminal emulator
+bindsym $mod+Return exec kitty
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Manage picom
+bindsym $mod+t exec --no-startup-id "picom --conf ~/.config/compton.conf -b -d :0"
+
+bindsym $mod+Control+t exec --no-startup-id pkill picom
+
+# Start picom for transparency
+exec --no-startup-id "picom --conf ~/.config/compton.conf -b -d :0"
+
+# Screenshot 
+bindsym Print exec --no-startup-id flameshot gui 
+
+# Start appLauncher
+bindsym $mod+d exec --no-startup-id rofi -show run
+
+# Restart i3 inplace
+bindsym $mod+Shift+r restart
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus Down
+bindsym $mod+Up focus Up
+bindsym $mod+Right focus right
+
+# Move window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move Down
+bindsym $mod+Shift+Up move Up
+bindsym $mod+Shift+Right move right
+
+# Split in vertical/horizontal orientation
+bindsym $mod+Control+h split h
+bindsym $mod+Control+v split v
+
+# Toggle fullscreen
+bindsym $mod+f fullscreen toggle
+
+# Toggle container layout split
+bindsym $mod+s layout toggle split
+bindsym $mod+a layout toggle 
+
+# Toggle tiling/floating
+bindsym $mod+space floating toggle
+
+# Volume control
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2%-
+bindsym XF86AudioMute exec amixer set Master toggle
+
+# Backlight control
+bindsym XF86MonBrightnessUp exec brightnessctl s +2%
+bindsym XF86MonBrightnessDown exec brightnessctl s 2%-
+
+# Lockscreen
+bindsym $mod+Control+l exec dm-tool lock
+
+# Workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# Switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# Resize window
+bindsym $mod+r mode "resize"
+mode "resize" {
+	bindsym h resize shrink width 10 px or 10 ppt
+	bindsym l resize grow width 10 px or 10 ppt
+	bindsym k resize shrink height 10 px or 10 ppt
+	bindsym j resize grow height 10 px or 10 ppt
+
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
+	bindsym Up resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow width 10 px or 10 ppt
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+r mode "default"
+}
+
+# Gaps
+gaps inner 10
+gaps outer 0
+
+bindsym $mod+o gaps outer current set 0; gaps inner current set 10
+bindsym $mod+i gaps inner current set 0; gaps inner current set 0
+
+bindsym $mod+g mode "resize gaps"
+mode "resize gaps" {
+	bindsym o mode "resize gaps outer"
+	bindsym i mode "resize gaps inner"
+
+	bindsym $mod+g mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+mode "resize gaps inner" {
+	bindsym Up gaps inner current plus 5
+	bindsym Down gaps inner current minus 5
+	bindsym 0 gaps inner current set 0
+
+	bindsym Shift+Up gaps inner all plus 5
+	bindsym Shift+Down gaps inner all minus 5
+	bindsym Shift+0 gaps inner all set 0
+
+	bindsym $mod+g mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+mode "resize gaps outer" {
+	bindsym Up gaps outer current plus 5
+	bindsym Down gaps outer current minus 5
+	bindsym 0 gaps outer current set 0
+
+	bindsym Shift+Up gaps outer all plus 5
+	bindsym Shift+Down gaps outer all minus 5
+	bindsym Shift+0 gaps outer all set 0
+
+	bindsym $mod+g mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
