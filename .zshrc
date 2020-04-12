@@ -9,14 +9,14 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_LS_COLORS="true"
 
 # Comment the following line to disable command auto-correction.
-ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
 
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-HIST_STAMPS="dd/mm/yyyy"
+#HIST_STAMPS="dd.mm.yyyy"
 
 plugins=(
 	archlinux
@@ -25,7 +25,6 @@ plugins=(
 	docker-compose
 	python
 	pip
-	history-substring-search
 	)
 
 source $ZSH/oh-my-zsh.sh
