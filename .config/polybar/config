@@ -280,7 +280,10 @@ type = custom/script
 exec=~/.config/polybar/backlight.sh
 
 tail=true
-interval=0.1
+interval=0
+
+scroll-up = ~/.config/polybar/backlight.sh increase
+scroll-down = ~/.config/polybar/backlight.sh decrease
 
 format-background = ${color.shade5}
 format-foreground = ${color.modulefg}
