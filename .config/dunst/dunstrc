@@ -1,0 +1,51 @@
+[global]
+monitor = 0
+follow = keyboard
+geometry = "200x25-0+25"
+indicate_hidden = yes
+shrink = no
+separator_height = 0
+padding = 10
+horizontal_padding = 10
+frame_width = 3
+sort = no
+idle_threshold = 0
+font = Fira Code 9
+line_height = 3
+markup = full
+format = "<b><big>%a</big></b>\n<b>%s</b>\n<i>%b</i>\n"
+alignment = left
+word_wrap = yes
+ignore_newline = no
+stack_duplicates = false
+hide_duplicate_count = false
+show_indicators = yes
+icon_position = on
+sticky_history = yes
+history_length = 20
+browser = /usr/bin/firefox
+always_run_script = true
+title = Dunst
+class = Dunst
+corner_radius = 4s
+
+[shortcuts]
+close = ctrl+space
+
+[urgency_low]
+timeout = 3
+background = "#0e1621"
+foreground = "#c9c9c9"
+frame_color = "#182531"
+
+[urgency_normal]
+timeout = 3
+background = "#0e1621"
+foreground = "#c9c9c9"
+frame_color = "#182531"
+
+[urgency_critical]
+timeout = 5
+background = "#0e1621"
+foreground = "#c9c9c9"
+frame_color = "#182531"

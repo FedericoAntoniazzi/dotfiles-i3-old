@@ -70,8 +70,8 @@ bindsym $mod+Control+l exec dm-tool lock
 bindsym $mod+Escape exec "i3lock -c 222222"
 
 # WiFi
-bindsym $mod+Control+F12 exec nmcli radio wifi off
-bindsym $mod+Control+F11 exec nmcli radio wifi on
+bindsym $mod+Control+F12 exec bash -c "nmcli radio wifi off && notify-send -a 'Gesture' 'Wifi' 'Disabled'"
+bindsym $mod+Control+F11 exec bash -c "nmcli radio wifi on && notify-send -a 'Gesture' 'Wifi' 'Enabled'"
 
 ######################
 #	WINDOW	     #
@@ -83,7 +83,6 @@ bindsym $mod+Shift+q kill
 # Toggle tiling/floating
 bindsym $mod+space floating toggle
 
-# Toggle fullscreen
 bindsym $mod+f fullscreen toggle
 
 #Change borders
