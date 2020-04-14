@@ -1,48 +1,50 @@
-# Set wallpaper
-exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.jpg
+##################
+#	i3       #
+##################
 
-# Auto lock
-exec --no-startup-id xautolock -time 15 -locker "dm-tool lock" &
-
-# Auto detect screens and change configuration 
-exec autorandr --load $(autorandr --detect)
-
-# Shortcuts
-bindsym $mod+F1 exec firefox
-bindsym $mod+F2 exec telegram-desktop
-
-# Autostart applications
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+# Global font
+font pango:Fira Code Retina Nerd Font Complete 9
 
 # Modifier key
 set $mod Mod4
 
-# Global font
-font pango:Fira Code Retina Nerd Font Complete Windows Compatible 9
-
 # Use $mod+Mouse to drag floating windows
 floating_modifier $mod
 
-#Change borders
-bindsym $mod+u border none
-bindsym $mod+y border pixel 2
-bindsym $mod+n border normal
-# Default = none
-for_window [class="^.*"] border pixel 2
+# Restart i3 inplace
+bindsym $mod+Shift+r restart
 
-# Start a terminal emulator
-bindsym $mod+Return exec kitty
+# Split in vertical/horizontal orientation
+bindsym $mod+Control+h split h
+bindsym $mod+Control+v split v
 
-# Kill focused window
-bindsym $mod+Shift+q kill
+# Toggle container layout split
+bindsym $mod+s layout toggle split
+bindsym $mod+a layout toggle 
 
-# Manage picom
-bindsym $mod+t exec --no-startup-id "picom --conf ~/.config/compton.conf -b -d :0"
+####################
+#	APPS       #
+####################
 
-bindsym $mod+Control+t exec --no-startup-id pkill picom
+# Set wallpaper
+exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.jpg
+
+# Auto detect screens and change configuration 
+exec autorandr --load $(autorandr --detect)
+
+# Autostart applications
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id xfce4-power-manager
 
 # Start picom for transparency
 exec --no-startup-id "picom --conf ~/.config/compton.conf -b -d :0"
+bindsym $mod+t exec --no-startup-id "picom --conf ~/.config/compton.conf -b -d :0"
+bindsym $mod+Control+t exec --no-startup-id pkill picom
+
+# Shortcuts
+bindsym $mod+F1 exec firefox
+bindsym $mod+F2 exec telegram-desktop
+bindsym $mod+Return exec kitty
 
 # Screenshot 
 bindsym Print exec --no-startup-id flameshot gui 
@@ -50,44 +52,9 @@ bindsym Print exec --no-startup-id flameshot gui
 # Start appLauncher
 bindsym $mod+d exec --no-startup-id rofi -show run
 
-# Restart i3 inplace
-bindsym $mod+Shift+r restart
-
-# Change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-bindsym $mod+Left focus left
-bindsym $mod+Down focus Down
-bindsym $mod+Up focus Up
-bindsym $mod+Right focus right
-
-# Move window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move Down
-bindsym $mod+Shift+Up move Up
-bindsym $mod+Shift+Right move right
-
-# Split in vertical/horizontal orientation
-bindsym $mod+Control+h split h
-bindsym $mod+Control+v split v
-
-# Toggle fullscreen
-bindsym $mod+f fullscreen toggle
-
-# Toggle container layout split
-bindsym $mod+s layout toggle split
-bindsym $mod+a layout toggle 
-
-# Toggle tiling/floating
-bindsym $mod+space floating toggle
+######################
+#	SYSTEM	     #
+######################
 
 # Volume control
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+
@@ -100,6 +67,76 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 2%-
 
 # Lockscreen
 bindsym $mod+Control+l exec dm-tool lock
+bindsym $mod+Escape exec "i3lock -c 222222"
+
+# WiFi
+bindsym $mod+Control+F12 exec nmcli radio wifi off
+bindsym $mod+Control+F11 exec nmcli radio wifi on
+
+######################
+#	WINDOW	     #
+######################
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Toggle tiling/floating
+bindsym $mod+space floating toggle
+
+# Toggle fullscreen
+bindsym $mod+f fullscreen toggle
+
+#Change borders
+bindsym $mod+u border none
+bindsym $mod+y border pixel 2
+bindsym $mod+n border normal
+
+# Default = none
+for_window [class="^.*"] border pixel 2
+
+# Move window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move Down
+bindsym $mod+Shift+Up move Up
+bindsym $mod+Shift+Right move right
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus Down
+bindsym $mod+Up focus Up
+bindsym $mod+Right focus right
+
+# Resize window
+bindsym $mod+r mode "resize"
+mode "resize" {
+	bindsym h resize shrink width 10 px or 10 ppt
+	bindsym l resize grow width 10 px or 10 ppt
+	bindsym k resize shrink height 10 px or 10 ppt
+	bindsym j resize grow height 10 px or 10 ppt
+
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
+	bindsym Up resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow width 10 px or 10 ppt
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+r mode "default"
+}
+
+#########################
+#	WORKSPACES      #
+#########################
 
 # Workspaces
 set $ws1 "1"
@@ -137,25 +174,10 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# Resize window
-bindsym $mod+r mode "resize"
-mode "resize" {
-	bindsym h resize shrink width 10 px or 10 ppt
-	bindsym l resize grow width 10 px or 10 ppt
-	bindsym k resize shrink height 10 px or 10 ppt
-	bindsym j resize grow height 10 px or 10 ppt
+####################
+#	GAPS	   #
+####################
 
-	bindsym Left resize shrink width 10 px or 10 ppt
-	bindsym Right resize grow width 10 px or 10 ppt
-	bindsym Up resize shrink width 10 px or 10 ppt
-	bindsym Down resize grow width 10 px or 10 ppt
-
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+r mode "default"
-}
-
-# Gaps
 gaps inner 10
 gaps outer 0
 
