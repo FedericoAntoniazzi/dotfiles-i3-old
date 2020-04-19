@@ -121,7 +121,7 @@ modules-right = right7 alsa right6 battery right5 backlight right4 wifi right3 e
 separator =
 spacing = 0
 dim-value = 1.0
-wm-name = 
+wm-name = i3
 locale = 
 
 tray-position = none
@@ -131,7 +131,7 @@ tray-transparent = false
 tray-background = ${color.bground}
 tray-offset-x = 0
 tray-offset-y = 0
-tray-padding = 0
+tray-padding = 2
 tray-scale = 1.0
 
 enable-ipc = true
