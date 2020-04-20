@@ -194,8 +194,8 @@ mode "resize gaps" {
 }
 
 mode "resize gaps inner" {
-	bindsym Up gaps inner current plus 5
-	bindsym Down gaps inner current minus 5
+	bindsym plus gaps inner current plus 5
+	bindsym minus gaps inner current minus 5
 	bindsym 0 gaps inner current set 0
 
 	bindsym Shift+Up gaps inner all plus 5
@@ -208,13 +208,12 @@ mode "resize gaps inner" {
 }
 
 mode "resize gaps outer" {
-	bindsym Up gaps outer current plus 5
-	bindsym Down gaps outer current minus 5
+	bindsym plus gaps outer current plus 5
+	bindsym minus gaps outer current minus 5
 	bindsym 0 gaps outer current set 0
 
-	bindsym Shift+Up gaps outer all plus 5
-	bindsym Shift+Down gaps outer all minus 5
-	bindsym Shift+0 gaps outer all set 0
+	bindsym Up gaps outer all plus 5
+	bindsym Down gaps outer all minus 5
 
 	bindsym $mod+g mode "default"
 	bindsym Return mode "default"
