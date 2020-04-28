@@ -92,7 +92,9 @@ bindsym $mod+y border pixel 2
 bindsym $mod+n border normal
 # Default borders
 default_border none
-default floating border none
+default_floating_border none
+# Defualt size
+floating_maximum_size 1500 x 750
 
 # Move window
 bindsym $mod+Shift+h move left
@@ -115,8 +117,6 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus Down
 bindsym $mod+Up focus Up
 bindsym $mod+Right focus right
-
-bindsym $mod+m focus child
 
 # Resize window
 bindsym $mod+r mode "resize"
