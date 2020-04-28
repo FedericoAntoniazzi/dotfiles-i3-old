@@ -64,6 +64,7 @@ alias l="lsd -lah"
 alias ll="lsd -lh"
 alias la="lsd -lAh"
 alias lsa="ls -lah"
+alias tree="ls --tree"
 
 path+=('/opt/flutter/bin')
 export PATH
