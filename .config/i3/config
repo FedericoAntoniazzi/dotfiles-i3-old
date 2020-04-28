@@ -19,6 +19,7 @@ bindsym $mod+Control+h split h
 bindsym $mod+Control+v split v
 
 # Toggle container layout split
+workspace_layout default
 bindsym $mod+s layout toggle split
 bindsym $mod+a layout toggle 
 
@@ -30,7 +31,7 @@ bindsym $mod+a layout toggle
 exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.jpg
 
 # Auto detect screens and change configuration 
-exec autorandr --load $(autorandr --detect)
+exec --no-startup-id autorandr --load $(autorandr --detect)
 
 # Autostart applications
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -85,13 +86,13 @@ bindsym $mod+space floating toggle
 
 bindsym $mod+f fullscreen toggle
 
-#Change borders
+# Change borders
 bindsym $mod+u border none
 bindsym $mod+y border pixel 2
 bindsym $mod+n border normal
-
-# Default = none
-for_window [class="^.*"] border pixel 2
+# Default borders
+default_border none
+default floating border none
 
 # Move window
 bindsym $mod+Shift+h move left
@@ -114,6 +115,8 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus Down
 bindsym $mod+Up focus Up
 bindsym $mod+Right focus right
+
+bindsym $mod+m focus child
 
 # Resize window
 bindsym $mod+r mode "resize"
@@ -198,8 +201,8 @@ mode "resize gaps inner" {
 	bindsym minus gaps inner current minus 5
 	bindsym 0 gaps inner current set 0
 
-	bindsym Shift+Up gaps inner all plus 5
-	bindsym Shift+Down gaps inner all minus 5
+	bindsym Up gaps inner all plus 5
+	bindsym Down gaps inner all minus 5
 	bindsym Shift+0 gaps inner all set 0
 
 	bindsym $mod+g mode "default"
