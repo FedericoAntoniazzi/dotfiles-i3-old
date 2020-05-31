@@ -64,9 +64,15 @@ alias ll="lsd -lh"
 alias la="lsd -lAh"
 alias lsa="ls -lah"
 alias tree="ls --tree"
+alias tree1="ls --tree --depth 1"
+alias tree2="ls --tree --depth 2"
+alias tree3="ls --tree --depth 3"
+alias tree4="ls --tree --depth 4"
+
+alias vim="nvim"
 
 path+=('/opt/flutter/bin')
 export PATH
 
-export EDITOR='vim'
-
+export EDITOR='nvim'
+export VISUAL="nvim"

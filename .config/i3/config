@@ -39,7 +39,7 @@ exec_always --no-startup-id xfce4-power-manager
 
 # Start picom for transparency
 exec --no-startup-id "picom -b"
-bindsym $mod+t exec --no-startup-id "picom --conf ~/.config/picom.conf -b -d :0"
+bindsym $mod+t exec --no-startup-id "picom --conf ~/.config/picom.conf -b" 
 bindsym $mod+Control+t exec --no-startup-id pkill picom
 
 # Shortcuts
