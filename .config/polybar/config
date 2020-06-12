@@ -116,7 +116,7 @@ font-2 = Iosevka Nerd Font:style=Medium:size=13;3
 modules-left = launcher left1 i3 left2 title left3
 ;modules-center = i3 
 ;modules-right = right7 colors right6 alsa right5 battery right4 backlight right3 wifi eth right2 date right1 powermenu
-modules-right = right7 alsa right6 battery right5 backlight right4 wifi right3 eth right2 date right1 powermenu
+modules-right = right7 pulseaudio right6 battery right5 backlight right4 wifi right3 eth right2 date right1 powermenu
 
 separator =
 spacing = 0
@@ -248,23 +248,25 @@ label-maxlen = 50
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[module/alsa]
-type = internal/alsa
+[module/pulseaudio]
+type = internal/pulseaudio
+
+use-ui-max = false
+
+interval = 5
 
 format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+
+format-muted = <label-muted>
+label-muted = " 婢Muted"
+
+format-muted-background = ${color.shade7}
+format-muted-foreground = ${color.modulefg}
+
 format-volume-background = ${color.shade7}
 format-volume-foreground = ${color.modulefg}
 format-volume-padding = 1
-
-#mapped = true
-
-label-volume = %percentage%%
-
-format-muted-prefix = 婢
-label-muted = " Muted"
-format-muted-background = ${color.shade7}
-format-muted-foreground = ${color.modulefg}
-format-muted-padding = 1
 
 ramp-volume-0 = 奄
 ramp-volume-1 = 
