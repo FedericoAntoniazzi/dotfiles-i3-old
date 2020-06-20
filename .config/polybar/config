@@ -398,7 +398,7 @@ type = internal/network
 interface = wlo1
 
 interval = 2.0
-accumulate-stats = true
+accumulate-stats = false
 unknown-as-up = true
 
 format-connected = <ramp-signal> <label-connected>

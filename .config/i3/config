@@ -1,5 +1,5 @@
 ##################
-#	i3       #
+#		i3       #
 ##################
 
 # Global font
@@ -24,7 +24,7 @@ bindsym $mod+s layout toggle split
 bindsym $mod+a layout toggle 
 
 ####################
-#	APPS       #
+#		APPS       #
 ####################
 
 # Set wallpaper
@@ -54,7 +54,7 @@ bindsym Print exec --no-startup-id flameshot gui
 bindsym $mod+d exec --no-startup-id rofi -show run
 
 ######################
-#	SYSTEM	     #
+#		SYSTEM	     #
 ######################
 
 # Volume control
@@ -71,11 +71,10 @@ bindsym $mod+Control+l exec dm-tool lock
 bindsym $mod+Escape exec "i3lock -c 222222"
 
 # WiFi
-bindsym $mod+Control+F12 exec bash -c "nmcli radio wifi off && notify-send -a 'Gesture' 'Wifi' 'Disabled'"
-bindsym $mod+Control+F11 exec bash -c "nmcli radio wifi on && notify-send -a 'Gesture' 'Wifi' 'Enabled'"
+bindsym $mod+Control+F10 exec .config/i3/wifi_toggle.sh
 
 ######################
-#	WINDOW	     #
+#	 	WINDOW	     #
 ######################
 
 # Kill focused window
@@ -137,7 +136,7 @@ mode "resize" {
 }
 
 #########################
-#	WORKSPACES      #
+#		WORKSPACES      #
 #########################
 
 # Workspaces
@@ -177,7 +176,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 ####################
-#	GAPS	   #
+#		GAPS	   #
 ####################
 
 gaps inner 10
