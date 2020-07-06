@@ -1,0 +1,10 @@
+{
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.autoComplete.addBrackets": true,
+    "python.formatting.provider": "black",
+
+    "explorer.icon.enableNerdfont": true,
+    "sh.enable": true
+}
