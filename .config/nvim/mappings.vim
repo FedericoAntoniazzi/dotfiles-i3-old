@@ -36,3 +36,12 @@ endfunction
 
 " Format current file
 nnoremap <silent> <C-f> :call CocAction('format')<CR>
+
+" Organise imports
+nnoremap <silent> <C-o> :call CocAction('runCommand', 'editor.action.organizeImport')
+
+" GoTo Code Navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
