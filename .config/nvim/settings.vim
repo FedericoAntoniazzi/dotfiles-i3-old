@@ -12,7 +12,7 @@ set splitright
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set expandtab
+"set expandtab
 
 "
 " Themes
@@ -20,18 +20,15 @@ set expandtab
 
 set termguicolors
 set background=dark
-let &t_8f = "\e[38;2;%lu;%lu;%lum"
-let &t_8b = "\e[48;2;%lu;%lu;%lum"
+
+set list
+set listchars=tab:>>
 
 " Popup Menu fixes
-highlight Pmenu     guibg=black
-highlight PmenuSel  guibg=black      guifg=yellow
+highlight Pmenu		guibg=black
+highlight PmenuSel	guibg=black		guifg=yellow
 
-"
-" Rainbow parentheses
-"
+highlight NonText	guibg=none		guifg=#3e4f70
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+highlight diffRemoved guibg=none	guifg=red
+highlight diffAdd	guibg=none		guifg=green
