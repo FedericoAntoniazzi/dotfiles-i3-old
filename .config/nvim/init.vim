@@ -8,9 +8,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim',                   {'branch': 'release'}
 Plug 'kien/rainbow_parentheses.vim'
 
-" Git 
 Plug 'airblade/vim-gitgutter'
-Plug 'itchyny/vim-gitbranch'
 
 call plug#end()
 
