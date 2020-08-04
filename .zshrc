@@ -77,4 +77,4 @@ export PATH
 export EDITOR='nvim'
 export VISUAL="nvim"
 
-export GOPATH=$HOME/Dev/go
+export GOPATH=$HOME/dev/go
