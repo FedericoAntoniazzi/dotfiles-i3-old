@@ -10,6 +10,8 @@ Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'airblade/vim-gitgutter'
 
+Plug 'dart-lang/dart-vim-plugin'
+
 call plug#end()
 
 
