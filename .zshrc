@@ -26,12 +26,20 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 #HIST_STAMPS="dd.mm.yyyy"
 
 plugins=(
-	archlinux
-	git
-	docker
+	# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/archlinux
+	#archlinux
+	# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cargo
+	# cargo
+	# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker-compose
 	docker-compose
-	python
-	pip
+	# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
+	git
+	# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/golang
+	# golang
+	# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rust
+	# rust
+	# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-autosuggestions
+	zsh-autosuggestions
 	)
 
 source $ZSH/oh-my-zsh.sh
