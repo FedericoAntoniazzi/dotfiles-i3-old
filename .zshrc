@@ -91,12 +91,16 @@ alias dc="docker-compose"
 alias gl="git log"
 alias glo="git log --oneline"
 
-path+=('/opt/flutter/bin')
-export PATH
-
 export EDITOR='nvim'
 export VISUAL="nvim"
 
-export GOPATH=$HOME/dev/go
-
 export DOCKER_BUILDKIT=1
+
+export GOPATH=$HOME/dev/go
+export GOBIN=$HOME/dev/go/bin
+export GO111MODUlE="on"
+
+path+=('/opt/flutter/bin')
+path+=($GOPATH)
+path+=($GOBIN)
+export PATH
