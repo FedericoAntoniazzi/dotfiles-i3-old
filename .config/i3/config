@@ -36,6 +36,7 @@ exec --no-startup-id autorandr --load $(autorandr --detect)
 # Autostart applications
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id xfce4-power-manager
+exec_always --no-startup-id light-locker --lock-on-suspend --lock-on-lid
 
 # Start picom for transparency
 exec --no-startup-id "picom -b"
