@@ -40,6 +40,8 @@ plugins=(
 	# rust
 	# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-autosuggestions
 	zsh-autosuggestions
+	#https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+	zsh-syntax-highlighting
 	)
 
 source $ZSH/oh-my-zsh.sh
@@ -98,7 +100,7 @@ export DOCKER_BUILDKIT=1
 
 export GOPATH=$HOME/dev/go
 export GOBIN=$HOME/dev/go/bin
-export GO111MODUlE="on"
+export GO111MODULE="on"
 
 path+=('/opt/flutter/bin')
 path+=($GOPATH)
