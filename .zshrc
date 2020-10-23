@@ -31,11 +31,13 @@ plugins=(
 	# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/cargo
 	# cargo
 	# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker-compose
-	docker-compose
+	# docker-compose
 	# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
 	git
 	# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/golang
 	# golang
+	# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pipenv
+	# pipenv
 	# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rust
 	# rust
 	# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-autosuggestions
@@ -97,6 +99,7 @@ export EDITOR='nvim'
 export VISUAL="nvim"
 
 export DOCKER_BUILDKIT=1
+export COMPOSE_DOCKER_CLI_BUILD=1
 
 export GOPATH=$HOME/dev/go
 export GOBIN=$HOME/dev/go/bin
