@@ -1,26 +1,37 @@
 {
 	"python.linting.pylintEnabled": false,
 	"python.linting.flake8Enabled": true,
-	"python.linting.enabled": true,
-	"python.autoComplete.addBrackets": true,
+	"python.linting.flake8Args": [
+		"--max-line-length",
+		"120"
+	],
 	"python.formatting.provider": "black",
-
+	"python.autoComplete.addBrackets": true,
+	"python.autoUpdateLanguageServer": true,
+	"python.jediEnabled": true,
 	"explorer.icon.enableNerdfont": true,
+	"explorer.openAction.relativePath": true,
 	"sh.enable": true,
-
+	"html.autoClosingTags": true,
+	"go.goplsOptions": {
+		"completeUnimported": true,
+		"usePlaceholders": true
+	},
 	"languageserver": {
 		"golang": {
 			"command": "gopls",
-			"rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-			"filetypes": ["go"],
+			"rootPatterns": [
+				"go.mod",
+				".vim/",
+				".git/",
+				".hg/"
+			],
+			"filetypes": [
+				"go"
+			],
 			"initializationOptions": {
 				"usePlaceholders": true
 			}
 		}
-	},
-
-	"go.goplsOptions": {
-		"completeUnimported": true,
-		"usePlaceholders": true
 	}
 }

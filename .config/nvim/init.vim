@@ -8,9 +8,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim',                   {'branch': 'release'}
 Plug 'kien/rainbow_parentheses.vim'
 
-Plug 'airblade/vim-gitgutter'
-
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 
 call plug#end()
 

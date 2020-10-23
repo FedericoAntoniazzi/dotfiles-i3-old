@@ -17,11 +17,17 @@ nnoremap <S-TAB> :bprev<CR>
 "
 
 " Use Ctrl+m to toggle Explorer
-nnoremap <silent> <C-m> :CocCommand explorer --toggle<CR>
+nmap <silent> <leader>m :CocCommand explorer --preset floating<CR>
+
 
 " Use Tab and Shift+Tab to trigger completion with characters ahead and navigate
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<Tab>" : coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use Ctrl+Space to trigger completion
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -42,14 +48,13 @@ endfunction
 nnoremap <silent> <C-f> :call CocAction('format')<CR>
 
 " Organise imports
-nnoremap <silent> <C-o> :call CocAction('runCommand', 'editor.action.organizeImport')
+nnoremap <silent> <C-o> :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
 
 " GoTo Code Navigation
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nnoremap <silent> <leader>d :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -59,6 +64,8 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Symbol renaming.
+" Show documentation
+nnoremap <silent> <leader>d :call <SID>show_documentation()<CR>
+" Symbol renaming
 nmap <leader>rn <Plug>(coc-rename)
 
