@@ -21,4 +21,4 @@ Probably I won't touch these files for long time so don't expect any upgrade :)
 I think I've spent more time on adding features to vim than any other config but now is really messy and I prefer starting again from scratch. It was also my first attempt at using it so many mappings may look horrible.
 
 ## Screenshot
-ToDo: Add a screenshot
+![First attempt at ricing i3gaps](.config/i3gaps-config-screenshot.png)
